@@ -174,4 +174,4 @@ Dieses Projekt steht unter der **GNU Affero General Public License v3.0 (AGPL-3.
 Für kommerzielle Nutzung in proprietären Produkten ist eine separate kommerzielle Lizenz erforderlich.
 Siehe [COMMERCIAL_LICENSE.md](./COMMERCIAL_LICENSE.md) für Details.
 
-© 2025 Michael Rosenau – Rellingen, Deutschland
+© 2025 reaonzaver-tech (Michael Göde) – Deutschland
