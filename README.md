@@ -146,11 +146,13 @@ htp-guardian/
 │   ├── content-bridge.js     # Extension-Welt Bridge
 │   └── content-main.js       # Page-Welt fetch()-Override
 ├── android/
-│   └── app/src/main/java/com/HTPGuardian/myapplication/
-│       ├── FloatingHtpService.kt
-│       ├── HtpAccessibilityService.kt
-│       ├── HtpLogger.kt
-│       └── MainActivity.kt
+│   ├── FloatingHtpService.kt
+│   ├── HtpAccessibilityService.kt
+│   ├── HtpLogger.kt
+│   ├── MainActivity.kt
+│   ├── activity_main.xml
+│   ├── AndroidManifest.xml
+│   └── network_security_config.xml
 ├── startToken.sh             # Alle Server auf einmal starten
 ├── LICENSE                   # AGPL-3.0
 ├── COMMERCIAL_LICENSE.md     # Kommerzielle Lizenz-Info
