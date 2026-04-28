@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0a0a0f"
+    android:padding="12dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HTP-GUARDIAN"
+            android:textColor="#00ff88"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/statusDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⬤"
+            android:textSize="10sp"
+            android:textColor="#ccaa00"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BEREIT"
+            android:textColor="#ccaa00"
+            android:textSize="10sp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- Buttons Zeile 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <Button
+            android:id="@+id/btnTestHandshake"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="3"
+            android:text="🔧 Handshake testen"
+            android:textSize="11sp"
+            android:backgroundTint="#0d2b0d"
+            android:textColor="#00ff66"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnClearLog"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="CLR"
+            android:textSize="11sp"
+            android:backgroundTint="#1a1a1a"
+            android:textColor="#555555"/>
+    </LinearLayout>
+
+    <!-- Buttons Zeile 2 -->
+    <Button
+        android:id="@+id/btnFloating"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="🛡 Floating HTP-Button aktivieren"
+        android:textSize="11sp"
+        android:backgroundTint="#001a2b"
+        android:textColor="#6699ff"
+        android:layout_marginBottom="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1a3a1a"
+        android:layout_marginBottom="6dp"/>
+
+    <ScrollView
+        android:id="@+id/logScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/logTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#00ff00"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:lineSpacingMultiplier="1.3"/>
+    </ScrollView>
+
+</LinearLayout>

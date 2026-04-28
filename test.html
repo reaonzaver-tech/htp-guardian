@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>HTP Tresor-Anwendung</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #fff; padding: 2rem; }
+    .app-container { max-width: 500px; margin: 0 auto; background: #16213e; padding: 2rem; border-radius: 8px; border: 1px solid #0f3460; }
+    button { background: #e94560; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 4px; width: 100%; }
+    button:hover { background: #d63d55; }
+    #status { margin-top: 20px; padding: 15px; border-radius: 4px; display: none; }
+    .error { background: #4a1c1c; border: 1px solid #ff4d4d; color: #ff9999; }
+    .success { background: #1c4a28; border: 1px solid #4dff88; color: #99ffbb; }
+    pre { background: #0f172a; padding: 10px; border-radius: 4px; overflow-x: auto; color: #a5b4fc; }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <h2>🔒 Geschützter Daten-Tresor</h2>
+  <p>Zugriff nur mit gültigem kryptografischem Nachweis.</p>
+  
+  <button onclick="accessVault()">Tresor öffnen</button>
+
+  <div id="status"></div>
+  <pre id="output"></pre>
+</div>
+
+<script>
+async function accessVault() {
+  const statusEl = document.getElementById("status");
+  const outputEl = document.getElementById("output");
+  
+  statusEl.style.display = "block";
+  statusEl.className = "";
+  statusEl.textContent = "Verbinde mit /api/vault...";
+  outputEl.textContent = "";
+
+  try {
+    const res = await fetch("http://localhost:3000/api/vault");
+    const data = await res.json();
+
+    if (!res.ok) {
+      statusEl.className = "error";
+      statusEl.textContent = "❌ " + data.message;
+    } else {
+      statusEl.className = "success";
+      statusEl.textContent = "✅ " + data.message;
+    }
+    
+    outputEl.textContent = JSON.stringify(data, null, 2);
+
+  } catch (err) {
+    statusEl.className = "error";
+    statusEl.textContent = "Netzwerkfehler oder Server down.";
+  }
+}
+</script>
+
+</body>
+</html>
